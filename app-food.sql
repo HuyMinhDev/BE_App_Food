@@ -46,23 +46,45 @@ CREATE TABLE Reviews (
 -- Thêm data mẫu vào bài tập --
 -- Users
 INSERT INTO Users (fullName) VALUES 
-("Nguyễn Minh Huy"), ("Nguyễn Minh Hoàng"), ("Nguyễn Minh Thắng"), ("Hồ Nguyễn Anh Thư"), ("Đặng Tấn Phát"), ("Nguyễn Ngọc Huỳnh");
+				  ("Nguyễn Minh Huy"), 
+				  ("Nguyễn Minh Hoàng"), 
+				  ("Nguyễn Minh Thắng"), 
+				  ("Hồ Nguyễn Anh Thư"), 
+				  ("Đặng Tấn Phát"), 
+				  ("Nguyễn Ngọc Huỳnh");
 
 -- Restaurants
 INSERT INTO Restaurants (name) VALUES 
-("Nhà hàng Korea"), ("Nhà hàng Japan"), ("Nhà hàng China");
+						("Nhà hàng Korea"), 
+						("Nhà hàng Japan"), 
+						("Nhà hàng China"),
+						("Nhà hàng France"),
+						("Nhà hàng Italian");
 
 -- Likes
 INSERT INTO Likes (userId, restaurantId) VALUES 
-(1, 1), (1, 2), (2, 2), (3, 1), (4, 1), (1, 3), (2, 1), (5, 1);
+				  (1, 1), 
+				  (1, 2), 
+				  (2, 2), 
+				  (3, 1), 
+				  (4, 1), 
+				  (1, 3), 
+				  (2, 1), 
+				  (5, 1);
 
 -- Orders
 INSERT INTO Orders (userId, restaurantId) VALUES 
-(1, 1), (1, 2), (2, 2), (3, 1), (1, 3);
+				   (1, 1), 
+				   (1, 2), 
+				   (2, 2), 
+				   (3, 1), 
+				   (1, 3);
 
 -- Reviews
 INSERT INTO Reviews (userId, restaurantId, content) VALUES 
-(1, 1, "Ngon lắm"), (2, 2, "Tạm ổn"), (3, 1, "Không ngon");
+					(1, 1, "Ngon lắm"), 
+					(2, 2, "Tạm ổn"), 
+					(3, 1, "Không ngon");
 
 -- Câu 1: Tìm 5 người đã like nhà hàng nhiều nhất --
 SELECT Users.fullName, COUNT(Likes.id) AS total_likes
